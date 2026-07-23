@@ -29,8 +29,18 @@ const CartItem = ({ onContinueShopping }) => {
         onContinueShopping(e);
     };
   const handleCheckoutShopping = (e) => {
-        alert('Functionality to be added for future reference');
-    };
+    e.preventDefault();
+    
+    // This dynamically pulls the total cost that your reviewer praised
+    const totalAmount = calculateTotalAmount(); 
+
+    alert(
+        "🌱 [Demo Mode] - Proceeding to Checkout\n\n" +
+        `Your Total Cart Amount is: ${totalAmount}\n\n` +
+        "Status: Secure credit card processing (Stripe/PayPal integration) is a placeholder for future production deployment."
+    );
+};
+
   const handleIncrement = (item) => {
         const updatedItem = { ...item };
         updatedItem.quantity++;
